@@ -1,20 +1,44 @@
 {
   "name": "my-electron-app",
-  "productName": "Test whatsapp",
+  "productName": "wi-whatsapp-sender",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dist": "electron-builder --mac --win --linux"
   },
   "keywords": [],
-  "author": "",
+  "author": {
+    "name": "Ankit Kumar",
+    "email": "ankit.k@workindia.in"
+  },
   "license": "ISC",
   "devDependencies": {
-    "electron": "^26.2.2"
+    "electron": "^26.2.2",
+    "electron-builder": "^24.6.4"
   },
   "dependencies": {
     "qrcode": "^1.5.3",
     "whatsapp-web.js-cloned-fixed": "1.1.0"
+  },
+  "build": {
+    "appId": "wi-whatsapp-sender",
+    "productName": "wi-whatsapp-sender",
+    "copyright": "© 2023 Eloquent Info Solutions Private Limited. All Rights Reserved.",
+    "mac": {
+      "icon": "assets/icons/mac/icon.icns"
+    },
+    "linux": {
+      "icon": "assets/icons/linux/32x32.png",
+      "target": [
+        "AppImage",
+        "deb"
+      ]
+    },
+    "win": {
+      "target": "NSIS",
+      "icon": "assets/icons/win/icon.ico"
+    }
   }
 }

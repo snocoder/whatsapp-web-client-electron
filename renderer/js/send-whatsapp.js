@@ -8,8 +8,8 @@ const messageSendingLoaderDiv = document.getElementById(
 );
 const sendingCountDiv = document.getElementById("sending-count");
 
-const intervalForDelay = 2;
-const delayBeforeNextMessage = 3000;
+const intervalForDelay = 10;
+const delayBeforeNextMessage = 2000;
 
 let sendingInProgress = false;
 let totalMessagesToSent = 0;

@@ -16,6 +16,7 @@ function createmainWindowdow() {
     title: "Test whatsapp",
     width: 800,
     height: 600,
+    icon: `${__dirname}/assets/icons/icon_512x512.png`,
     webPreferences: {
       nodeIntegration: true,
       enableRemoteModule: true,
@@ -38,6 +39,7 @@ function createAboutWindow() {
     title: "About Test whatsapp",
     width: 300,
     height: 300,
+    icon: `${__dirname}/assets/icons/icon_512x512.png`,
   });
 
   aboutWindow.loadFile(path.join(__dirname, "./renderer/about.html"));
