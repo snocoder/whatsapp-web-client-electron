@@ -1,0 +1,107 @@
+.wrapper {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: var(--light-background-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 50px;
+}
+
+.wrapper__card {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 7px;
+  background-color: var(--white);
+  padding: 58px 52px;
+  box-shadow: 0 17px 50px 0 rgba(11, 20, 26, 0.19),
+    0 12px 15px 0 rgba(11, 20, 26, 0.24);
+}
+
+.wrapper__card__header {
+  margin-bottom: 24px;
+  font-size: 24px;
+}
+
+.wrapper__card__form {
+}
+
+.wrapper__card__form__input {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper__card__form__input:first-child {
+  margin-top: 20px;
+}
+
+.wrapper__card__form__input > label {
+  margin-bottom: 5px;
+}
+
+.wrapper__card__form__input > textarea {
+  margin-bottom: 5px;
+  outline: none;
+  border: 1px solid var(--primary-text-color);
+  font-family: "Rubik", sans-serif;
+  color: var(--primary-text-color);
+  font-size: 14px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  width: 100%;
+  resize: vertical;
+}
+
+.wrapper__card__form__input > textarea:focus {
+  border-color: var(--primary-cta-color);
+}
+
+.wrapper__card__form__input__info {
+  font-size: 14px;
+  opacity: 0.5;
+}
+
+.wrapper__card__form__buttonWrapper {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper__card__form__buttonWrapper__button {
+  border-radius: 8px;
+  background-color: var(--primary-cta-color);
+  color: var(--white);
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.wrapper__card__form__error {
+  text-align: center;
+  margin-top: 20px;
+  color: var(--status-error-color);
+}
+
+.wrapper__card__form__loading {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.wrapper__card__form__sendingCount {
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 400;
+  color: var(--status-valid-color);
+}
+
+.wrapper__card__form__sendingCount > span:nth-child(2) {
+  font-weight: 500;
+}
+
+.wrapper__card__form__ssuccessMessage {
+  margin-top: 30px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--status-valid-color);
+}

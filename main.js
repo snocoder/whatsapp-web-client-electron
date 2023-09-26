@@ -18,6 +18,7 @@ function createmainWindowdow() {
     height: 600,
     webPreferences: {
       nodeIntegration: true,
+      enableRemoteModule: true,
       contextIsolation: true,
       preload: path.join(__dirname, "preload.js"),
     },
@@ -104,6 +105,26 @@ const menu = [
         },
       ]
     : []),
+  {
+    label: "Keyboard Access",
+    submenu: [
+      { label: "Undo", accelerator: "CmdOrCtrl+Z", selector: "undo:" },
+      {
+        label: "Redo",
+        accelerator: "Shift+CmdOrCtrl+Z",
+        selector: "redo:",
+      },
+      { type: "separator" },
+      { label: "Cut", accelerator: "CmdOrCtrl+X", selector: "cut:" },
+      { label: "Copy", accelerator: "CmdOrCtrl+C", selector: "copy:" },
+      { label: "Paste", accelerator: "CmdOrCtrl+V", selector: "paste:" },
+      {
+        label: "Select All",
+        accelerator: "CmdOrCtrl+A",
+        selector: "selectAll:",
+      },
+    ],
+  },
 ];
 
 // Respond to the "create-whatsapp-web-client" event
@@ -153,6 +174,19 @@ ipcMain.on("create-whatsapp-web-client", (e, options) => {
   });
 
   client.initialize();
+});
+
+// Handle page navigation
+ipcMain.on("navigate-to-screen", (e, filePath) => {
+  console.log("navigate-to-screen", filePath);
+  mainWindow.loadFile(path.join(__dirname, `./renderer/${filePath}`));
+});
+
+// Handle sending whatsapp text message
+ipcMain.on("send-whatsapp-text-message", (e, data) => {
+  console.log("send-whatsapp-text-message", data);
+  const { mobile, message } = JSON.parse(data);
+  client.sendMessage(mobile, message);
 });
 
 // Quit when all windows are closed.

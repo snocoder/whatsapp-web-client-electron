@@ -11,7 +11,7 @@
 .wrapper__card {
   width: 100%;
   max-width: 800px;
-
+  border-radius: 7px;
   background-color: var(--white);
   padding: 58px 52px;
   box-shadow: 0 17px 50px 0 rgba(11, 20, 26, 0.19),

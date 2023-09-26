@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="script-src 'self' 'unsafe-inline'"
+    />
+    <title>Send Whatsapp</title>
+    <link rel="stylesheet" href="css/global.css" />
+    <link rel="stylesheet" href="css/send-whatsapp-style.css" />
+    <script src="js/send-whatsapp.js" defer></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div class="wrapper__card">
+        <p class="wrapper__card__header">Send Whatsapp Now</p>
+        <div class="wrapper__card__form">
+          <div class="wrapper__card__form__input">
+            <label htmlFor="mobileNumbers">Enter WhatsApp Numbers</label>
+            <textarea
+              id="mobileNumbers"
+              name="mobileNumbers"
+              rows="5"
+              placeholder="+917530003398,+917530003399"
+            ></textarea>
+            <p class="wrapper__card__form__input__info">
+              Add country code in front, separate using comma, like:
+              +917530003398,+917530003399
+            </p>
+          </div>
+          <div class="wrapper__card__form__input">
+            <label htmlFor="message">Message Text</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              placeholder=""
+            ></textarea>
+          </div>
+          <div class="wrapper__card__form__buttonWrapper">
+            <div
+              class="wrapper__card__form__buttonWrapper__button"
+              id="send-whatsapp-now"
+            >
+              Start sending now
+            </div>
+          </div>
+
+          <div class="wrapper__card__form__error" id="error-message"></div>
+
+          <div
+            class="wrapper__card__form__loading"
+            id="message-sending-loader"
+          ></div>
+
+          <div
+            class="wrapper__card__form__sendingCount"
+            id="sending-count"
+          ></div>
+
+          <div
+            class="wrapper__card__form__ssuccessMessage"
+            id="success-message"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

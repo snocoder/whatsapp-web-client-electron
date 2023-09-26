@@ -1,10 +1,10 @@
-console.log("whatsapp.js ran");
-
 const qrCodeContainer = document.getElementById("qr-code");
 const qrCodeLoaderContainer = document.getElementById("qr-loader");
 const qrStatusContainer = document.getElementById("qr-status");
 
 function createWhatsappWebClient() {
+  console.log("whatsapp client initialize function called");
+
   qrCodeContainer.style.display = "none";
   ipcRenderer.send("create-whatsapp-web-client");
 }
@@ -45,6 +45,6 @@ ipcRenderer.on("ready", () => {
     .split("_")
     .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
     .join(" ");
-});
 
-createWhatsappWebClient();
+  ipcRenderer.send("navigate-to-screen", "send-whatsapp.html");
+});
