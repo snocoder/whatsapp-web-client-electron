@@ -1,0 +1,20 @@
+{
+  "name": "my-electron-app",
+  "productName": "Test whatsapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "electron": "^26.2.2"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.3",
+    "whatsapp-web.js-cloned-fixed": "1.1.0"
+  }
+}
