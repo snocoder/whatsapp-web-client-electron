@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "qrcode": "^1.5.3",
-    "whatsapp-web.js-cloned-fixed": "1.1.0"
+    "whatsapp-web.js-cloned-fixed": "2.0.1"
   },
   "build": {
     "appId": "wi-whatsapp-sender",
@@ -37,8 +37,22 @@
       ]
     },
     "win": {
-      "target": "NSIS",
-      "icon": "assets/icons/win/icon.ico"
+      "icon": "assets/icons/win/icon.ico",
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": true,
+      "installerIcon": "assets/icons/win/icon.ico",
+      "uninstallerIcon": "assets/icons/win/icon.ico",
+      "uninstallDisplayName": "wi-whatsapp-sender-uninstaller",
+      "allowToChangeInstallationDirectory": false
     }
   }
 }
